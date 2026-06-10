@@ -30,6 +30,8 @@ A lightweight macOS utility that opens the current Finder folder in iTerm2 with 
 2. Unzip it
 3. Hold `⌘` and drag `Open in iTerm2.app` into the Finder toolbar
 
+> The workflow is identical to [OpenInCode](https://github.com/luigi-borriello00/OpenInCode) — the GIFs below show the same process applied to VS Code, but the behavior is exactly the same with iTerm2.
+
 <p align="center">
   <img src=".github/assets/Using.gif" alt="Using Open in iTerm2" width="600">
 </p>
