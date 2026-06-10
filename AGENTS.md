@@ -23,4 +23,4 @@ No test suite exists. To verify manually:
 # should exit 0 and open the current Finder folder in iTerm2
 
 ## Release
-Push a tag `v*` to trigger `.github/workflows/release.yml`. The workflow builds the universal binary, ad-hoc signs it, zips the `.app`, and creates a GitHub Release.
+Every push to `main` triggers `.github/workflows/release.yml`. The workflow auto-bumps the patch version (e.g. `v2.0.0` -> `v2.0.1`), creates a git tag, builds the universal binary, ad-hoc signs it, zips the `.app`, and creates a GitHub Release.
