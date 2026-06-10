@@ -30,7 +30,7 @@ func getFinderPath() -> String? {
 func openInITerm2(path: String) {
     let task = Process()
     task.launchPath = "/usr/bin/open"
-    task.arguments = ["-n", "-b", "com.googlecode.iterm2", path]
+    task.arguments = ["-b", "com.googlecode.iterm2", path]
     task.launch()
     task.waitUntilExit()
 }
