@@ -1,0 +1,32 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: macos-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build
+        run: ./build.sh
+
+      - name: Ad-hoc sign
+        run: codesign --force --deep --sign - "build/Open in iTerm2.app"
+
+      - name: Zip
+        run: |
+          cd build
+          zip -r "Open in iTerm2.app.zip" "Open in iTerm2.app"
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/Open in iTerm2.app.zip
+          generate_release_notes: true
